@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<!-- Website template by freewebsitetemplates.com -->
+<html>
+<head>
+	<title>SHOP - In The Spirit of Blue</title>
+	<meta charset="utf-8">
+	<link href="css/style.css" rel="stylesheet" type="text/css">
+	<!--[if IE 7]>
+		<link href="css/ie7.css" rel="stylesheet" type="text/css">
+	<![endif]-->
+</head>
+<body>
+	<div id="background">
+		<div id="page">
+			<div id="header">
+				<a href="in-the-spirit-of-blue.html"><img id="logo" src="images/img.PNG" width="280" height="65" alt=""></a>
+				<ul class="navigation">
+					<li>
+						<a  href="in-the-spirit-of-blue.html">HOME</a>
+					</li>
+					<li>
+						<a href="about.html">ABOUT</a>
+					</li>
+					<li>
+						<a class="active" href="shop.html">SHOP</a>
+					</li>
+					<li>
+						<a href="contact.html">CONTACT US</a>
+					</li>
+				</ul>
+			</div>
+			<div id="body">
+				<div id="section">
+					<div class="sidebar">
+						<h1>PRODUCT CATEGORIES</h1>
+						<ul>
+							<li class="active">
+								<a href="shop.html?section=where-blue-still-beats" class="section-link" data-section="where-blue-still-beats">WHERE BLUE STILL BEATS</a>
+							</li>
+							<li>
+								<a href="shop.html?section=peace-of-blue" class="section-link" data-section="peace-of-blue">PEACE OF BLUE</a>
+							</li>
+							<li>
+								<a href="#" class="section-link" data-section="blue-grace">BLUE GRACE</a>
+							</li>
+							<li>
+								<a href="#" class="section-link" data-section="grief">GRIEF</a>
+							</li>
+							<li>
+								<a href="#" class="section-link" data-section="red-hearted-bunny">RED HEARTED BUNNY</a>
+							</li>
+							<li>
+								<a href="#" class="section-link" data-section="in-the-zen-of-blue">IN THE ZEN OF BLUE</a>
+							</li>
+						</ul>
+					</div>
+					<div class="content">
+						<h2 id="sectionTitle">LIMITED EDITION "THE SCARS BLUE CARRIES"</h2>
+						<div class="details" id="sectionDetails">
+							<p id="sectionDescription">
+								An intimate reflection on the unseen scars we carry, where blue gently embraces our pain, protecting the parts of ourselves the world never gets to see.
+							</p>
+							<ul id="sectionFeatures">
+								<li>
+									<a href="#">Flowing red lines symbolizing the emotional wounds and lasting scars that shape us, even when they remain invisible to others.</a>
+								</li>
+								<li>
+									<a href="#">Blue flowing around the scars representing protection, compassion, and quiet resilience, reminding us that healing doesn't erase our scars,it teaches us how to carry them with care.</a>
+								</li>
+							</ul>
+							<a href="#" id="addToCartButton" class="button add-to-cart" data-item="TV SET 1 - MODEL 12345">ADD TO CART</a> <a href="#" id="addToWishlistButton" class="button add-to-wishlist" data-item="TV SET 1 - MODEL 12345">WISHLIST</a> </div>
+						<div class="item">
+							<img id="sectionImage" src="images/IMG_1.jpg" width="280" height="336" alt="WHERE BLUE STILL BEATS">
+						</div>
+						<p class="section-summary">
+							This collection explores the quiet emotions we often carry within ourselves—grief, vulnerability, hidden scars, and the journey toward healing. Through the recurring presence of blue, each painting reflects a different stage of emotional resilience, portraying blue as a symbol of comfort, protection, grace, and inner peace. Together, these works invite viewers to embrace their unseen struggles with compassion, reminding us that our deepest wounds do not diminish us, but become part of the strength and beauty that shape who we are.
+
+						</p>
+					</div>
+				</div>
+			</div>
+			<div id="cartSidebar" class="cart-sidebar">
+				<button id="sidebarClose" class="sidebar-close" type="button">×</button>
+				<h3>Added Item</h3>
+				<ul id="cartItemsList">
+					<li>No items added.</li>
+				</ul>
+				<h3>Wishlist</h3>
+				<ul id="wishlistItemsList">
+					<li>No items added.</li>
+				</ul>
+				<button id="buyButton" class="cart-buy" type="button">BUY</button>
+			</div>
+			<div id="footer">
+				<div>
+					<p class="footer-strong">
+                       This collection explores the many shades of blue as a reflection of the human spirit. Through symbols of vulnerability, tranquility, and harmony, each painting tells a different story of emotions hidden beneath the surface. Together, they remind us that even through sorrow, silence, and change, our inner light and true colors never fade.
+					</p>
+				</div>
+				<span id="footnote"> &copy; Copyright &copy; 2026. In The Spirit of Blue </span>
+				<span id="footnote"> &copy; BAYASGALAN NOMIN ERDENE (24229514)</span>
+				<ul class="connect">
+					<li><a href="http://www.freewebsitetemplates.com/go/facebook/" class="facebook">&nbsp;</a></li>
+					<li><a href="http://www.freewebsitetemplates.com/go/twitter/" class="twitter">&nbsp;</a></li>
+					<li><a href="http://www.freewebsitetemplates.com/go/googleplus/" class="googleplus">&nbsp;</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		(function() {
+			const storageKey = 'addedShopItems';
+			const cartList = document.getElementById('cartItemsList');
+			const wishlistList = document.getElementById('wishlistItemsList');
+			const sidebar = document.getElementById('cartSidebar');
+			const sidebarClose = document.getElementById('sidebarClose');
+			const buyButton = document.getElementById('buyButton');
+			const addButtons = document.querySelectorAll('.add-to-cart, .add-to-wishlist');
+			const sectionLinks = document.querySelectorAll('.sidebar ul li a.section-link');
+			const sectionTitle = document.getElementById('sectionTitle');
+			const sectionDescription = document.getElementById('sectionDescription');
+			const sectionFeatures = document.getElementById('sectionFeatures');
+				const sectionImage = document.getElementById('sectionImage');
+				const addToCartButton = document.getElementById('addToCartButton');
+				const addToWishlistButton = document.getElementById('addToWishlistButton');
+
+				const sectionPages = {
+					'where-blue-still-beats': {
+						title: 'WHERE BLUE STILL BEATS',
+						description: 'A contemplative study of how blue persists in the heart and mind, revealing quiet pulses of hope beneath loss and celebrating resilience in fragile beauty.',
+						image: 'images/IMG_7.jpg',
+						imageWidth: 280,
+						imageHeight: 336,
+						features: ['Soft layers of blue that speak of recovery', 'A still heart that keeps beating with hope']
+					},
+					'peace-of-blue': {
+						title: 'PEACE OF BLUE',
+						description: 'A serene composition exploring calm, self-discovery, and inner balance through soft blues and silent reflection.',
+						image: 'images/IMG_5.jpg',
+						imageWidth: 280,
+						imageHeight: 336,
+						features: ['A silent figure surrounded by blue', 'Harmony through stillness and acceptance']
+					},
+					'blue-grace': {
+						title: 'BLUE GRACE',
+						description: 'A gentle exploration of movement and calm where blue becomes a soft embrace, guiding the viewer toward balance and inner peace.',
+						image: 'images/IMG_2.jpg',
+						imageWidth: 280,
+						imageHeight: 336,
+						features: ['Flowing forms that mirror quiet motion', 'A peaceful palette of blues and silver']
+					},
+					'grief': {
+						title: 'GRIEF',
+						description: 'An honest reflection on sorrow and recovery, using deep blue to honor pain while opening space for healing and compassion.',
+						image: 'images/IMG_8.jpg',
+						imageWidth: 280,
+						imageHeight: 336,
+						features: ['Emotion captured in stillness', 'A quiet journey from loss to light']
+					},
+					'red-hearted-bunny': {
+						title: 'RED HEARTED BUNNY',
+						description: 'A small rabbit stands beneath a sky of endless blue, wearing a stern expression while a quiet heart glows upon its forehead. It symbolizes the warmth and tenderness hidden beneath a guarded exterior.',
+						image: 'images/IMG_4.jpg',
+						imageWidth: 280,
+						imageHeight: 336,
+						features: ['A gentle heart beneath a strong shell', 'A story of softness wrapped in blue']
+					},
+					'in-the-zen-of-blue': {
+						title: 'IN THE ZEN OF BLUE',
+						description: 'White koi glide effortlessly through deep blue waters, moving in quiet harmony. The piece invites surrender to serenity and the practice of mindful acceptance.',
+						image: 'images/IMG_6.jpg',
+						imageWidth: 280,
+						imageHeight: 336,
+						features: ['Harmony found in stillness', 'A calm rhythm of water and light']
+					}
+				};
+
+				function renderSection(key) {
+					const section = sectionPages[key];
+					if (!section) return;
+					sectionTitle.textContent = section.title;
+					sectionDescription.textContent = section.description;
+					sectionFeatures.innerHTML = section.features.map(feature => `<li><a href="#">${feature}</a></li>`).join('');
+					sectionImage.src = section.image;
+					sectionImage.alt = section.title;
+					sectionImage.width = section.imageWidth;
+					sectionImage.height = section.imageHeight;
+					addToCartButton.dataset.item = section.title;
+					addToWishlistButton.dataset.item = section.title;
+				}
+
+				function loadItems() {
+					return JSON.parse(sessionStorage.getItem(storageKey) || '[]');
+				}
+
+				function saveItems(items) {
+					sessionStorage.setItem(storageKey, JSON.stringify(items));
+				}
+
+				function renderSidebar() {
+				const items = loadItems();
+				const cartItems = items.filter(item => item.type === 'cart');
+				const wishlistItems = items.filter(item => item.type === 'wishlist');
+
+				cartList.innerHTML = cartItems.length
+					? cartItems.map(item => `<li>${item.title} <button type="button" class="sidebar-remove" data-id="${item.id}" data-type="cart">Remove</button></li>`).join('')
+					: '<li>No items added.</li>';
+				wishlistList.innerHTML = wishlistItems.length
+					? wishlistItems.map(item => `<li>${item.title} <button type="button" class="sidebar-remove" data-id="${item.id}" data-type="wishlist">Remove</button></li>`).join('')
+					: '<li>No items added.</li>';
+
+				sidebar.style.display = items.length ? 'block' : 'none';
+				sidebar.classList.toggle('visible', items.length > 0);
+				attachRemoveListeners();
+			}
+
+			function attachRemoveListeners() {
+				document.querySelectorAll('#cartSidebar button.sidebar-remove').forEach(button => {
+					if (button.dataset.listenerAttached) return;
+					button.addEventListener('click', function(event) {
+						event.preventDefault();
+						removeItem(this.dataset.id);
+					});
+					button.dataset.listenerAttached = 'true';
+				});
+			}
+
+			function addItem(type, title) {
+				const items = loadItems();
+				items.push({ id: Date.now() + Math.random(), type, title });
+				saveItems(items);
+				renderSidebar();
+			}
+
+			function removeItem(id) {
+				const items = loadItems();
+				const filtered = items.filter(item => item.id.toString() !== id.toString());
+				saveItems(filtered);
+				renderSidebar();
+			}
+
+			addButtons.forEach(button => {
+				button.addEventListener('click', function(event) {
+					event.preventDefault();
+					const type = this.classList.contains('add-to-cart') ? 'cart' : 'wishlist';
+					addItem(type, this.dataset.item || 'Item');
+				});
+			});
+
+			sectionLinks.forEach(link => {
+				link.addEventListener('click', function(event) {
+					event.preventDefault();
+					sectionLinks.forEach(l => l.parentElement.classList.remove('active'));
+					this.parentElement.classList.add('active');
+					renderSection(this.dataset.section);
+				});
+			});
+
+			// Remove button listeners are attached after renderSidebar().
+
+			sidebarClose.addEventListener('click', function() {
+				sidebar.style.display = 'none';
+			});
+
+			buyButton.addEventListener('click', function() {
+				const items = loadItems();
+				if (!items.length) return;
+				window.location.href = 'contact.html';
+			});
+
+			renderSidebar();
+
+			const urlParams = new URLSearchParams(window.location.search);
+			const initialSection = urlParams.get('section');
+			if (initialSection && sectionPages[initialSection]) {
+				sectionLinks.forEach(link => {
+					if (link.dataset.section === initialSection) {
+						link.parentElement.classList.add('active');
+					} else {
+						link.parentElement.classList.remove('active');
+					}
+				});
+				renderSection(initialSection);
+			} else {
+				renderSection('where-blue-still-beats');
+			}
+		})();
+	</script>
+</body>
+</html>

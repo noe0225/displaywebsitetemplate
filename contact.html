@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<!-- Website template by freewebsitetemplates.com -->
+<html>
+<head>
+	<title>Contact - In The Spirit of Blue</title>
+	<meta charset="utf-8">
+	<link href="css/style.css" rel="stylesheet" type="text/css">
+	<!--[if IE 7]>
+		<link href="css/ie7.css" rel="stylesheet" type="text/css">
+	<![endif]-->
+</head>
+<body>
+	<div id="background">
+		<div id="page">
+			<div id="header">
+				<a href="in-the-spirit-of-blue.html"><img id="logo" src="images/img.PNG" width="280" height="65" alt=""></a>
+				<ul class="navigation">
+					<li>
+						<a href="in-the-spirit-of-blue.html">HOME</a>
+					</li>
+					<li>
+						<a  href="about.html">ABOUT</a>
+					</li>
+					<li>
+						<a href="shop.html">SHOP</a>
+					</li>
+					<li>
+						<a class="active" href="contact.html">CONTACT US</a>
+					</li>
+				</ul>
+			</div>
+			<div id="body">
+				<div class="section">
+					<h2><a href="contact.html">CONTACT US</a></h2>
+					<p>
+                     This collection explores the many shades of blue as a reflection of the human spirit. Through symbols of vulnerability, tranquility, and harmony, each painting tells a different story of emotions hidden beneath the surface. Together, they remind us that even through sorrow, silence, and change, our inner light and true colors never fade.
+				   </p>
+                     <p>
+						In The Spirit of Blue is located at: <span>4-42-31 Higashi Ikebukuro</span> <span>Toshima City, Tokyo, Japan</span>
+					</p>
+					<p>
+						<span>Telephone: 070-9235-5009</span> <span>s24229514@al.tiu.ac.jp</span>
+					</p>
+					<p>
+						<span>nomin.erdene25@gmail.com</span>
+					</p>
+				</div>
+				<div id="content">
+					<form action="#">
+						<table>
+							<tr>
+								<td class="first"><label for="name"><span>NAME:</span>
+										<input type="text" name="name" id="name">
+									</label></td>
+								<td><label for="email"><span>EMAIL:</span>
+										<input type="text" name="email" id="email">
+									</label></td>
+							</tr>
+							<tr>
+								<td class="first">
+									<label for="subject">
+										<span>SUBJECT:</span>
+										<input type="text" name="subject" id="subject">
+									</label></td>
+								<td></td>
+							</tr>
+						</table>
+						<table class="message">
+							<tr>
+								<td>
+									<label for="message"><span>MESSAGE:</span>
+										<textarea name="message" id="message"></textarea>
+									</label></td>
+							</tr>
+							<tr>
+								<td>
+									<label for="subscribe" class="subscribe active">
+										<input type="checkbox" id="subscribe" checked>
+										Subscribe by email </label>
+									<label for="agree" class="agree">
+										<input type="checkbox" id="agree">
+										I agree to the Terms and Conditions </label>
+									<input type="submit" value="SEND">
+								</td>
+							</tr>
+						</table>
+					</form>
+				</div>
+			</div>
+			<div id="footer">
+				<div>
+					<p class="footer-strong">
+                       This collection explores the many shades of blue as a reflection of the human spirit. Through symbols of vulnerability, tranquility, and harmony, each painting tells a different story of emotions hidden beneath the surface. Together, they remind us that even through sorrow, silence, and change, our inner light and true colors never fade.
+					</p>
+				</div>
+				<span id="footnote"> &copy; Copyright &copy; 2026. In The Spirit of Blue </span>
+				<span id="footnote"> &copy; BAYASGALAN NOMIN ERDENE (24229514)</span>
+
+				<ul class="connect">
+					<li><a href="http://www.freewebsitetemplates.com/go/facebook/" class="facebook">&nbsp;</a></li>
+					<li><a href="http://www.freewebsitetemplates.com/go/twitter/" class="twitter">&nbsp;</a></li>
+					<li><a href="http://www.freewebsitetemplates.com/go/googleplus/" class="googleplus">&nbsp;</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		(function() {
+			const storageKey = 'addedShopItems';
+			const textarea = document.getElementById('message');
+			if (!textarea) return;
+
+			const items = JSON.parse(sessionStorage.getItem(storageKey) || '[]');
+			if (!items.length) return;
+
+			const cartItems = items.filter(item => item.type === 'cart');
+			const lines = [];
+
+			if (cartItems.length) {
+				lines.push('Added Item:');
+				cartItems.forEach(item => lines.push(`- ${item.title}`));
+			}
+
+			textarea.value = lines.join('\n');
+		})();
+	</script>
+</body>
+</html>
