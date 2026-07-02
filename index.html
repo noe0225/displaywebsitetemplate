@@ -107,5 +107,29 @@
 			</div>
 		</div>
 	</div>
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {
+			var storageKey = 'welcomePopupShown';
+			if (sessionStorage.getItem(storageKey) === 'true') {
+				return;
+			}
+			var popup = document.createElement('div');
+			popup.className = 'welcome-popup-overlay';
+			popup.innerHTML = '<div class="welcome-popup-card">' +
+				'<h1>Welcome to In The Spirit of Blue</h1>' +
+				'<p>Explore each painting and discover the emotions hidden within every shade of blue.</p>' +
+				'<button type="button" class="welcome-popup-close">Begin Exploring</button>' +
+			'</div>';
+			document.body.appendChild(popup);
+			requestAnimationFrame(function() {
+				popup.classList.add('visible');
+			});
+			popup.querySelector('.welcome-popup-close').addEventListener('click', function() {
+				sessionStorage.setItem(storageKey, 'true');
+				popup.classList.remove('visible');
+				setTimeout(function() { popup.remove(); }, 320);
+			});
+		});
+	</script>
 </body>
 </html>
