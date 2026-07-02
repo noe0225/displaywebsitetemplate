@@ -32,6 +32,7 @@
 			<div id="body">
 				<div class="featured">
 					<div class="section"> <img src="images/img1.jpg" width="950" height="600" alt="">
+						<button type="button" class="shade-blue-button" id="shadeBlueButton">Click to Find Your Shade of Blue</button>
 						<div>
 							<h2> <a href="index.html">THE BLUES WE HIDE <span>DEEP IN OUR HEARTS</span></a> </h2>
 							<p>
@@ -110,9 +111,75 @@
 	<script>
 		document.addEventListener('DOMContentLoaded', function() {
 			var storageKey = 'welcomePopupShown';
+			var shadeButton = document.getElementById('shadeBlueButton');
+
+			if (shadeButton) {
+				shadeButton.addEventListener('click', function() {
+					var shades = [
+						{
+							name: 'Midnight Blue',
+							color: '#0D1B2A',
+							messages: [
+								'Being broken doesn\'t dim your color. Even the deepest blue still reflects the stars.',
+								'You can be quiet and still carry an entire sky inside you.'
+							]
+						},
+						{
+							name: 'Tide Blue',
+							color: '#1E4D6B',
+							messages: [
+								'Your heart isn\'t too much. The sea doesn\'t apologize for its depth, and neither should you.',
+								'Some feelings arrive like waves, but waves always know how to return to calm.'
+							]
+						},
+						{
+							name: 'Moonlit Blue',
+							color: '#A7C6E8',
+							messages: [
+								'Allow yourself to shine without the desire to be seen.',
+								'Soft light is still light. You do not need to be loud to be beautiful.'
+							]
+						},
+						{
+							name: 'Blue After Rain',
+							color: '#6E8FB8',
+							messages: [
+								'Every storm leaves behind a softer sky. Give yourself permission to bloom after surviving.',								'What passed through you did not erase you; it made your colors gentler.'
+							]
+						},
+						{
+							name: 'Spirit Blue',
+							color: '#2E5BFF',
+							messages: [
+								'The blue you carry is not sadness alone. It is every memory, every scar, and every hope that shaped your light.',
+							
+							]
+						}
+					];
+					var shade = shades[Math.floor(Math.random() * shades.length)];
+					var message = shade.messages[Math.floor(Math.random() * shade.messages.length)];
+					var overlay = document.createElement('div');
+					overlay.className = 'shade-popup-overlay';
+					overlay.innerHTML = '<div class="shade-popup-card" style="background:' + shade.color + ';">' +
+						'<h2>YOUR BLUE: ' + shade.name + '</h2>' +
+						'<p>' + message + '</p>' +
+						'<button type="button" class="shade-popup-close">Close</button>' +
+					'</div>';
+					document.body.appendChild(overlay);
+					requestAnimationFrame(function() {
+						overlay.classList.add('visible');
+					});
+					overlay.querySelector('.shade-popup-close').addEventListener('click', function() {
+						overlay.classList.remove('visible');
+						setTimeout(function() { overlay.remove(); }, 280);
+					});
+				});
+			}
+
 			if (sessionStorage.getItem(storageKey) === 'true') {
 				return;
 			}
+
 			var popup = document.createElement('div');
 			popup.className = 'welcome-popup-overlay';
 			popup.innerHTML = '<div class="welcome-popup-card">' +
